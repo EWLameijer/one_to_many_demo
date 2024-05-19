@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -15,6 +17,9 @@ public class Author {
     private UUID id;
 
     private String name;
+
+    @OneToMany
+    private final Set<Post> posts = new HashSet<>();
 
     public Author(String name) {
         this.name = name;
