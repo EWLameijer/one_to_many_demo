@@ -1,5 +1,6 @@
 package org.ericwubbo.onetomanydemo;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,7 @@ public class Author {
     private String name;
 
     @OneToMany(mappedBy = "author")
+    @JsonManagedReference
     private final Set<Post> posts = new HashSet<>();
 
     public Author(String name) {

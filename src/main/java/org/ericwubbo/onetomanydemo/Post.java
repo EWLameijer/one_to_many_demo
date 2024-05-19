@@ -1,5 +1,6 @@
 package org.ericwubbo.onetomanydemo;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -16,6 +17,7 @@ public class Post {
     private Long id;
 
     @ManyToOne
+    @JsonBackReference
     private Author author;
 
     private String text;
