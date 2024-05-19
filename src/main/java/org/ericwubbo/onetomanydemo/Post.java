@@ -12,6 +12,7 @@ public class Post {
     @GeneratedValue
     private Long id;
 
+    @ManyToOne
     private Author author;
 
     private String text;
